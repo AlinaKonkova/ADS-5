@@ -29,7 +29,7 @@ int calculator(char znak, int x, int y) {
 }
 
 std::string infx2pstfx(std::string inf) {
-  std::string res;
+  std::string result;
   char probel = ' ';
   TStack <char, 100> stack1;
   for (int i = 0; i < inf.size(); i++) {
@@ -84,7 +84,7 @@ int eval(std::string pref) {
     } else if (prioritet(pref[i]) < 4) {
       x = stack2.get();
       stack2.pop();
-      y = res_stack.get();
+      y = stack2.get();
       stack2.pop();
       stack2.push(calculator(pref[i], x, y));
     }
