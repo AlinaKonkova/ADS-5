@@ -41,7 +41,7 @@ std::string infx2pstfx(std::string inf) {
         stack1.push(inf[i]);
       } else if (stack1.isEmpty()) {
           stack1.push(inf[i]);
-      } else if ((prioritet(inf[i]) > prioritet(stack.get()))) {
+      } else if ((prioritet(inf[i]) > prioritet(stack1.get()))) {
           stack1.push(inf[i]);
       } else if (prioritet(inf[i]) == 1) {
         while (prioritet(stack1.get()) != 0) {
