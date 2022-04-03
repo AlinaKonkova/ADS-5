@@ -28,7 +28,7 @@ int Calculator(char prior, int x, int y) {
 }
 
 std::string infx2pstfx(std::string inf) {
- td::string result;
+  std::string result;
   char probel = ' ';
   TStack <char, 100> stack1;
   for (int i = 0; i < inf.size(); i++) {
@@ -68,28 +68,28 @@ std::string infx2pstfx(std::string inf) {
   }
   for (int i = 0; i < result.size(); i++) {
     if (result[result.size() - 1] == ' ')
-      res.erase(result.size() - 1);
+      result.erase(result.size() - 1);
   }
   return result;
 }
 
 
 int eval(std::string pref) {
- TStack <int, 100> stack2;
-  int res = 0;
+  TStack <int, 100> stack2;
+  int result = 0;
   int x = 0;
   int y = 0;
   for (int i = 0; i < pref.size(); i++) {
-    if (priority(pref[i]) == 4) {
+    if (Prioritet(pref[i]) == 4) {
       stack2.push(pref[i] - '0');
-    } else if (priority(pref[i]) < 4) {
+    } else if (Prioritet(pref[i]) < 4) {
       x = stack2.get();
       stack2.pop();
       y = stack2.get();
       stack2.pop();
-      stack2.push(calculation(pref[i], x, y));
+      stack2.push(Calculator(pref[i], x, y));
     }
   }
-  res = stack2.get();
-  return res;
+  result = stack2.get();
+  return result;
 }
