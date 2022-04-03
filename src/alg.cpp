@@ -18,7 +18,6 @@ int Prioritet(char prior) {
 
 int Calculator(char prior, int x, int y) {
     switch (prior) {
-    case '/': return x / y;
     case '-': return x - y;
     case '+': return x + y;
     case '*': return x * y;
