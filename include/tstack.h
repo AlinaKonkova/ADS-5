@@ -4,10 +4,10 @@
 
 template<typename T, int size>
 class TStack {
- private:
+  private:
   T arr[100];
   int top;
- public:
+  public:
   TStack() : top(-1) { }
   bool isEmpty() const {
     return top == -1;
@@ -16,10 +16,10 @@ class TStack {
     return top == size - 1;
   }
   void push(T value) {
-   if (isFull())
-    throw "Full!";
-  else
-    arr[++top] = value;
+    if (isFull())
+      throw "Full!";
+    else
+      arr[++top] = value;
   }
   T get() const {
   return arr[top];
