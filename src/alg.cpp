@@ -21,7 +21,9 @@ int Calculator(char prior, int x, int y) {
     case '-': return x - y;
     case '+': return x + y;
     case '*': return x * y;
-    case '/': return x / y;
+    case '/': 
+      if (x != 0)
+        return y / x;
     default: return 0;
     }
 }
