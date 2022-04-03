@@ -7,6 +7,7 @@ class TStack {
  private:
   T arr[100];
   int top;
+ 
  public:
   TStack() : top(-1) { }
   bool isEmpty() const {
@@ -18,7 +19,7 @@ class TStack {
   void push(T value) {
     if (isFull())
     throw "Full!";
-  else
+    else
     arr[++top] = value;
   }
   T get() const {
